@@ -7,6 +7,7 @@ const bp = require('body-parser');
 const dbConnect = require('./config/db.config');
 
 // import controllers
+const getCategories = require('./controllers/getCategories.controller');
 const getPhrases = require('./controllers/getPhrases.controller');
 
 // create express app
@@ -41,6 +42,7 @@ app.get(['/'], (request, response) => {
 });
 
 // endpoints
+app.get('/api/get-categories', getCategories);
 app.post('/api/get-phrases', getPhrases);
 
 // execute database connection
