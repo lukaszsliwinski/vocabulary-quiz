@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+/client/node_modules
+
+# angular
+/client/.angular
+/client/.vscode
+
+# production build
+/client/dist
+
+# env
+.env
+
+# convert data script
+/convert_data
