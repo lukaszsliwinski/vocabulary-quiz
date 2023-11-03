@@ -1,9 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IPhrase } from 'src/app/models/phrase';
 import { PhrasesService } from 'src/app/services/phrases.service';
 import { ResultService } from 'src/app/services/result.service';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +13,9 @@ import { ResultService } from 'src/app/services/result.service';
 })
 export class CardComponent implements OnInit {
   private router =  inject(Router);
+
+  @ViewChild('answerInputRef') answerInputRef: ElementRef;
+  @ViewChild('nextBtnRef') nextBtnRef: ElementRef;
 
   public nextDisabled: boolean = true;
 
@@ -34,7 +38,11 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     this.clearData();
-    this.getData()
+    this.getData();
+  }
+
+  ngAfterViewInit() {
+    this.answerInputRef.nativeElement.focus();
   }
 
   clearData(): void {
@@ -73,9 +81,10 @@ export class CardComponent implements OnInit {
   check(): void {
     this.correct = this.phrasesService.checkTheCorrectness(this.answerForm.value.answerInput, this.translations);
     this.nextDisabled = false;
+    setTimeout(() => this.nextBtnRef.nativeElement.focus());
+    
     if (this.correct !== undefined) this.answerForm.disable();
     if (this.correct === true) this.resultService.incrementScore();
-
   }
 
   next(): void {
@@ -83,5 +92,7 @@ export class CardComponent implements OnInit {
     this.clearData();
     this.getData();
     this.nextDisabled = true;
+
+    this.answerInputRef.nativeElement.focus();
   }
 }

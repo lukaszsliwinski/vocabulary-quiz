@@ -8,6 +8,7 @@
 <form [formGroup]="answerForm" (ngSubmit)="check()">
   <label for="answerInput">your answer: </label>
   <input
+    #answerInputRef
     id="answerInput"
     type="text"
     formControlName="answerInput"
@@ -23,4 +24,4 @@
   </div>
 </div>
 
-<button (click)="next()" [disabled]="nextDisabled">next</button>
+<button #nextBtnRef (click)="next()" [disabled]="nextDisabled">next</button>
