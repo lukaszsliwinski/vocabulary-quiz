@@ -1,0 +1,26 @@
+<a routerLink="/">go back</a>
+<app-result></app-result>
+<hr>
+<div *ngFor="let category of categories">
+  <span>{{ category }}</span>
+</div>
+<p>{{ id }}: pol phrase: {{ plPhrase }}</p>
+<form [formGroup]="answerForm" (ngSubmit)="check()">
+  <label for="answerInput">your answer: </label>
+  <input
+    id="answerInput"
+    type="text"
+    formControlName="answerInput"
+    placeholder="answer"
+  />
+  <button type="submit" [disabled]="correct !== undefined">check</button>
+</form>
+<div *ngIf="correct === true">ok</div>
+<div *ngIf="correct === false">not ok</div>
+<div *ngIf="correct !== undefined">
+  <div *ngFor="let engPhrase of translations; index as i">
+    <p>eng translation {{ i+1 }}: {{ engPhrase }}</p>
+  </div>
+</div>
+
+<button (click)="next()" [disabled]="nextDisabled">next</button>
