@@ -18,21 +18,16 @@ const getPhrases = (request, response) => {
         })
       })
 
-      console.log(data);
-
       response.status(200).json({
         status: 200,
         message: 'ok',
         phrases: data
       })
     })
-    .catch((error) => {
-      console.log(error);
-
-      // sprawdzić kod błędu - poniżej tymczasowo!!!
-      response.status(404).json({
-        status: 404,
-        message: 'error',
+    .catch(() => {
+      response.status(500).json({
+        status: 500,
+        message: 'Error, please try again later.',
         phrases: []
     });
   });

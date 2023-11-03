@@ -50,7 +50,6 @@ export class CardComponent implements OnInit {
 
   getData(): void {
     this.phrase = this.phrasesService.getPhraseById(this.id);
-    console.log(this.phrase);
     this.phrasesService.phrasesAmount$.subscribe((total) => {
       this.total = total;
     })
@@ -64,21 +63,16 @@ export class CardComponent implements OnInit {
         this.categories.push(category);
       })
     } else if (this.id > this.total) {
-      alert('handle end of quiz');
+      alert(`Your result: ${this.resultService.score$} / ${this.total}`);
       this.router.navigate(['/']);
     } else {
-      // rozbudować
-      console.log('error');
+      alert('Error, please reload app and try again.');
     }
   }
 
   check(): void {
-    const input = this.answerForm.value.answerInput;
-    if (typeof input === 'string') {
-      this.correct = this.phrasesService.checkTheCorrectness(input, this.translations);
-      this.nextDisabled = false;
-    };
-
+    this.correct = this.phrasesService.checkTheCorrectness(this.answerForm.value.answerInput, this.translations);
+    this.nextDisabled = false;
     if (this.correct !== undefined) this.answerForm.disable();
     if (this.correct === true) this.resultService.incrementScore();
 

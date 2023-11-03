@@ -21,7 +21,6 @@ export class PhrasesService {
     return this.http.post<IPhrasesHttpResponse>('api/get-phrases', { category: category })
       .pipe(
         tap((result) => {
-          console.log(result.phrases);
           this.randomPhrases.next(result.phrases);
           this.phrasesAmount.next(result.phrases.length)
         }),
