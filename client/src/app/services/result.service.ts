@@ -18,4 +18,8 @@ export class ResultService {
   clearScore(): void {
     this.score.next(0);
   }
+
+  getScore(): number {
+    return this.score.value;
+  }
 }

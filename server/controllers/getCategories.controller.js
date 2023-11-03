@@ -2,8 +2,12 @@ const Phrase = require('../models/phrase.model')
 
 const getCategories = (request, response) => {
   Phrase
-    .distinct("categories")
+    .aggregate([
+      {"$unwind": "$categories"},
+      {"$group": { _id: "$categories", count: { $sum: 1 } }}
+    ])
     .then((result) => {
+      console.log(result);
       response.status(200).json({
         status: 200,
         message: 'ok',
@@ -15,7 +19,7 @@ const getCategories = (request, response) => {
         status: 500,
         message: 'Error, please try again later.',
         categories: []
-    });
+      });
   });
 }
 

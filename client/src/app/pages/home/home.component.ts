@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PhrasesService } from 'src/app/services/phrases.service';
+import { ICategory } from 'src/app/models/category';
 import { ICategoriesHttpResponse } from 'src/app/models/http-responses';
 import { ResultService } from 'src/app/services/result.service';
 
@@ -15,7 +16,7 @@ import { ResultService } from 'src/app/services/result.service';
 export class HomeComponent implements OnInit {
   private router = inject(Router);
 
-  private categories = new BehaviorSubject<string[]>([]);
+  private categories = new BehaviorSubject<ICategory[]>([]);
 
   public categories$ = this.categories.asObservable();
 

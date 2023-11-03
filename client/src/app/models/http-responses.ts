@@ -1,10 +1,11 @@
+import { ICategory } from "./category"
 import { IPhrase } from "./phrase"
 
 // categories
 export interface ICategoriesHttpResponse {
   status: number,
   message: string,
-  categories: string[]
+  categories: ICategory[]
 }
 
 // phrases

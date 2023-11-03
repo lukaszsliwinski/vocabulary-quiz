@@ -63,7 +63,7 @@ export class CardComponent implements OnInit {
         this.categories.push(category);
       })
     } else if (this.id > this.total) {
-      alert(`Your result: ${this.resultService.score$} / ${this.total}`);
+      alert(`Your result: ${this.resultService.getScore()} / ${this.total}`);
       this.router.navigate(['/']);
     } else {
       alert('Error, please reload app and try again.');
