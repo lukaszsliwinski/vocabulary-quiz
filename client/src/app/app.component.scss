@@ -1,0 +1,46 @@
+@import '../assets/styles/variables.scss';
+
+main {
+  width: 100vw;
+  max-width: $app-width;
+  min-height: 100vh;
+
+  header {
+    color: $text-light;
+    border-bottom-right-radius: $header-radius;
+    width: 100%;
+    height: 100px;
+    padding: 25px 20px;
+    font-size: 28px;
+    font-style: italic;
+    letter-spacing: 2.5px;
+    background-color: $main;
+  }
+  
+  div#corner {
+    width: $header-radius;
+    height: $header-radius;
+    background-color: $main;
+  
+    &::after {
+      display: block;
+      border-top-left-radius: $header-radius;
+      width: $header-radius;
+      height: $header-radius;
+      background-color: $bg;
+      content: '';
+    }
+  }
+
+  @media only screen and (min-width: $app-width) {
+    min-height: 90vh;
+    margin: 5vh auto;
+    box-shadow: $shadow-xl;
+    border-radius: $app-radius;
+
+    header {
+      border-radius: $app-radius $app-radius $header-radius 0;
+    }
+
+  }
+}

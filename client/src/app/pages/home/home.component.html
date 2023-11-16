@@ -1,4 +1,4 @@
-<div *ngIf="categories$ | async as categories">
+<div id="content" *ngIf="categories$ | async as categories">
   {{ categories.length }} categories:
   <menu>
     <button *ngFor="let categorie of categories" (click)="start(categorie._id);">
