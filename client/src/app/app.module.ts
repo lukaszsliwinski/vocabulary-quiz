@@ -9,13 +9,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { ResultComponent } from './components/result/result.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CardComponent,
-    ResultComponent
+    ResultComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

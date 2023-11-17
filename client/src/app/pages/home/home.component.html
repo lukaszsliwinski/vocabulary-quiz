@@ -1,9 +1,8 @@
 <div id="content" *ngIf="categories$ | async as categories">
   {{ categories.length }} categories:
   <menu>
-    <button *ngFor="let categorie of categories" (click)="start(categorie._id);">
-      {{ categorie._id }}<br>
-      ({{ categorie.count }} words)
-    </button>
+    <div *ngFor="let category of categories">
+      <app-category [category]="category"></app-category>
+    </div>
   </menu>
 </div>
