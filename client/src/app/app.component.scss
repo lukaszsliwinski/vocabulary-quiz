@@ -33,8 +33,8 @@ main {
   }
 
   @media only screen and (min-width: $app-width) {
-    min-height: 90vh;
-    margin: 5vh auto;
+    min-height: $app-height;
+    margin: calc((100vh - $app-height) / 2) auto;
     box-shadow: $shadow-xl;
     border-radius: $app-radius;
 

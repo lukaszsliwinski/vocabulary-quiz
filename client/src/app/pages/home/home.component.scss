@@ -28,6 +28,6 @@ div#content {
   }
 
   @media only screen and (min-width: $app-width) {
-    max-height: calc(100vh - 170px - 10vh);
+    max-height: calc($app-height - 170px);
   }
 }
