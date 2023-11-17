@@ -7,7 +7,6 @@ const getCategories = (request, response) => {
       {"$group": { _id: "$categories", count: { $sum: 1 } }}
     ])
     .then((result) => {
-      console.log(result);
       response.status(200).json({
         status: 200,
         message: 'ok',
