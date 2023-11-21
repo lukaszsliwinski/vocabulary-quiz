@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   private categories = new BehaviorSubject<ICategory[]>([]);
 
   public categories$ = this.categories.asObservable();
+  public types = ['verbs', 'phrasal verbs', 'nouns', 'adjectives', 'phrases'];
 
   constructor(
     private http: HttpClient
@@ -27,7 +28,11 @@ export class HomeComponent implements OnInit {
     return this.http.get<ICategoriesHttpResponse>('api/get-categories')
       .pipe(
         tap((result) => {
-          this.categories.next(result.categories);
+          let data: ICategory[] = result.categories;
+          const otherCategory = data.find(obj => obj._id === 'other');
+
+          if (otherCategory) data.push(data.splice(data.indexOf(otherCategory), 1)[0]);
+          this.categories.next(data);
         }),
         catchError((error: HttpErrorResponse) => {
           return throwError(() => error);

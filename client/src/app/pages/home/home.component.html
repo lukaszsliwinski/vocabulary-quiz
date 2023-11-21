@@ -1,8 +1,14 @@
-<div id="content" *ngIf="categories$ | async as categories">
-  {{ categories.length }} categories:
+<section *ngIf="categories$ | async as categories">
+  <h2>categories:</h2>
   <menu>
     <div *ngFor="let category of categories">
-      <app-category [category]="category"></app-category>
+      <app-category *ngIf="!types.includes(category._id)" [category]="category"></app-category>
     </div>
   </menu>
-</div>
+  <h2>types:</h2>
+  <menu>
+    <div *ngFor="let category of categories">
+      <app-category *ngIf="types.includes(category._id)" [category]="category"></app-category>
+    </div>
+  </menu>
+</section>
