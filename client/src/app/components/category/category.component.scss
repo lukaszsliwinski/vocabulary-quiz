@@ -1,12 +1,29 @@
+@import '../../../assets/styles/variables.scss';
+
 button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 5px;
-  border: 1px solid black;
   width: 100%;
   height: 80px;
-
+  padding: 0 16px;
+  background-size: cover;
+  font-weight: bold;
+  color: $text-light;
   cursor: pointer;
 
+  &.gradient {
+    background-color: blue;
+  }
+
   &:hover {
-    background-color: lightgray;
+    opacity: .85;
+  }
+
+  div.icon-wrapper {
+    font-size: 28px;
+    color: $text-light;
   }
 }

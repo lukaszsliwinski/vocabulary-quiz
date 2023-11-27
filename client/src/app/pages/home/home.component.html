@@ -1,14 +1,14 @@
 <section *ngIf="categories$ | async as categories">
-  <h2>categories:</h2>
+  <h2>categories</h2>
   <menu>
     <div *ngFor="let category of categories">
-      <app-category *ngIf="!types.includes(category._id)" [category]="category"></app-category>
+      <app-category *ngIf="!types.includes(category._id)" [category]="category" [background]="'image'"></app-category>
     </div>
   </menu>
-  <h2>types:</h2>
+  <h2>types</h2>
   <menu>
     <div *ngFor="let category of categories">
-      <app-category *ngIf="types.includes(category._id)" [category]="category"></app-category>
+      <app-category *ngIf="types.includes(category._id)" [category]="category" [background]="'gradient'"></app-category>
     </div>
   </menu>
 </section>

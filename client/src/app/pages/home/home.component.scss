@@ -1,19 +1,39 @@
 @import '../../../assets/styles/variables.scss';
 
 section {
-  margin: 10px 20px;
-  max-height: calc(100vh - 200px);
+  margin: 0 20px;
+  max-height: calc(100vh - 170px);
   padding: 0 10px;
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-color: $main transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $main;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $main;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
   @media only screen and (min-width: $app-width) {
-    max-height: calc($app-height - 200px);
+    max-height: calc($app-height - 170px);
   }
 
   h2 {
     display: inline-block;
+    margin: 16px 0 4px;
     width: 100%;
     text-align: center;
+    font-weight: bold;
   }
 }
