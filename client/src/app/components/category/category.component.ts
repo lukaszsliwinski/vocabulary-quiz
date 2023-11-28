@@ -10,7 +10,7 @@ import {
   faBriefcase,
   faGears,
   faFaceSmile,
-  faBurger,
+  faCarrot,
   faClipboardQuestion,
   faCommentDots,
   IconDefinition
@@ -33,7 +33,7 @@ export class CategoryComponent implements OnInit {
     {name: 'business', icon: faBriefcase},
     {name: 'technical', icon: faGears},
     {name: 'behaviour', icon: faFaceSmile},
-    {name: 'cooking', icon: faBurger},
+    {name: 'cooking', icon: faCarrot},
     {name: 'other', icon: faClipboardQuestion},
     {name: 'verbs', icon: faCommentDots},
     {name: 'phrases', icon: faCommentDots},

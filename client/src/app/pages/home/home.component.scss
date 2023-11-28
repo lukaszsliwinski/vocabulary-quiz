@@ -6,7 +6,7 @@ section {
   padding: 0 10px;
   overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-color: $main transparent;
+  scrollbar-color: $light-grey transparent;
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -14,11 +14,11 @@ section {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $main;
+    background: $light-grey;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: $main;
+    background: $light-grey;
   }
 
   &::-webkit-scrollbar-track {

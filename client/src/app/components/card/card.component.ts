@@ -5,6 +5,7 @@ import { IPhrase } from 'src/app/models/phrase';
 import { PhrasesService } from 'src/app/services/phrases.service';
 import { ResultService } from 'src/app/services/result.service';
 import { ElementRef } from '@angular/core';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card',
@@ -26,6 +27,8 @@ export class CardComponent implements OnInit {
   public categories: string[];
   public correct: boolean | undefined;
   public total: number = 0;
+
+  public faXmark = faXmark;
 
   public answerForm = new FormGroup({
     answerInput: new FormControl()

@@ -1,27 +1,39 @@
-<a routerLink="/">go back</a>
-<app-result></app-result>
-<hr>
-<div *ngFor="let category of categories">
-  <span>{{ category }}</span>
-</div>
-<p>{{ id }}: pol phrase: {{ plPhrase }}</p>
-<form [formGroup]="answerForm" (ngSubmit)="check()">
-  <label for="answerInput">your answer: </label>
-  <input
-    #answerInputRef
-    id="answerInput"
-    type="text"
-    formControlName="answerInput"
-    placeholder="answer"
-  />
-  <button type="submit" [disabled]="correct !== undefined">check</button>
-</form>
-<div *ngIf="correct === true">ok</div>
-<div *ngIf="correct === false">not ok</div>
-<div *ngIf="correct !== undefined">
-  <div *ngFor="let engPhrase of translations; index as i">
-    <p>eng translation {{ i+1 }}: {{ engPhrase }}</p>
-  </div>
-</div>
-
-<button #nextBtnRef (click)="next()" [disabled]="nextDisabled">next</button>
+<section>
+  <header>
+    <button routerLink="/" class="back">
+        <fa-icon [icon]="faXmark"></fa-icon>
+    </button>
+    <app-result></app-result>
+  </header>
+  <form
+    [formGroup]="answerForm"
+    [ngClass]="{'correct': correct === true, 'incorrect' : correct === false }"
+    (ngSubmit)="check()"
+  >
+    <div class="tags">
+      <small *ngFor="let category of categories">{{ category }}</small>
+    </div>
+    <div class="pl-phrase">{{ id }}. {{ plPhrase }}</div>
+    <div class="answer-input">
+      <input
+        #answerInputRef
+        id="answerInput"
+        type="text"
+        formControlName="answerInput"
+      />
+    </div>
+    <div class="correct-answers">
+      <div
+        *ngFor="let engPhrase of translations; index as i"
+        [ngClass]="{'hidden': correct === undefined}"
+      >
+        <span [ngClass]="{'hidden': translations.length === 1}">{{ i+1 }}.&nbsp;</span>
+        {{ engPhrase }}
+      </div>
+    </div>
+    <div class="btn-group">
+      <button type="submit" [disabled]="correct !== undefined">Check</button>
+      <button #nextBtnRef (click)="next()" [disabled]="nextDisabled">Next</button>
+    </div>
+  </form>
+</section>

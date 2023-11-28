@@ -6,12 +6,13 @@ button {
   justify-content: space-between;
   align-items: center;
   margin: 5px;
+  border-radius: 8px;
   width: 100%;
   height: 80px;
   padding: 0 16px;
   background-size: cover;
   font-weight: bold;
-  color: $text-light;
+  color: $light;
   cursor: pointer;
 
   &.gradient {
@@ -24,6 +25,6 @@ button {
 
   div.icon-wrapper {
     font-size: 28px;
-    color: $text-light;
+    color: $light;
   }
 }

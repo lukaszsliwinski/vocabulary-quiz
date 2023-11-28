@@ -4,9 +4,10 @@ main {
   width: 100vw;
   max-width: $app-width;
   min-height: 100vh;
+  background-color: $app-bg;
 
   header {
-    color: $text-light;
+    color: $light;
     border-bottom-right-radius: $header-radius;
     width: 100%;
     height: 100px;
@@ -16,18 +17,18 @@ main {
     letter-spacing: 2.5px;
     background-color: $main;
   }
-  
+
   div#corner {
     width: $header-radius;
     height: $header-radius;
     background-color: $main;
-  
+
     &::after {
       display: block;
       border-top-left-radius: $header-radius;
       width: $header-radius;
       height: $header-radius;
-      background-color: $bg;
+      background-color: $app-bg;
       content: '';
     }
   }
