@@ -1,6 +1,8 @@
 @import '../../../assets/styles/variables.scss';
 
 section {
+  padding-bottom: 20px;
+
   header {
     display: flex;
     justify-content: space-between;
@@ -27,7 +29,7 @@ section {
   }
 
   form {
-    margin: 20px;
+    margin: 10vh 20px 0;
     box-shadow: $shadow-xl;
     border-radius: 20px;
     background-color: $light;
@@ -51,9 +53,9 @@ section {
         display: block;
         margin: 0 2px;
         border-radius: 4px;
-        border: 1.5px solid $main;
+        border: 1.5px solid $mid-main;
         padding: 3px 6px;
-        background-color: $light;
+        background-color: $light-main;
         color: $main;
         font-size: 12px;
         font-weight: 500;
@@ -76,8 +78,7 @@ section {
       input#answerInput {
         margin: 10px 0;
         border-bottom: 2px solid $dark;
-        width: 300px;
-        // width: 200px; dla mobile
+        width: 200px;
         padding: 0 8px 4px;
         text-align: center;
         font-size: 20px;
@@ -97,21 +98,21 @@ section {
         font-weight: 500;
       }
 
-
       .hidden {
         display: none;
       }
     }
 
-
-
     div.btn-group {
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
+      align-items: center;
       padding: 20px;
 
       button {
         display: inline-block;
+        margin: 2px;
         box-shadow: $shadow-xl;
         border-radius: 16px;
         width: 120px;
@@ -128,9 +129,20 @@ section {
         }
 
         &[disabled] {
-          /* do zmiany */
-          opacity: .65;
+          background-color: $mid-main;
         }
+      }
+    }
+
+    @media only screen and (min-width: 360px) {
+      div.answer-input {
+        input#answerInput {
+          width: 280px;
+        }
+      }
+
+      div.btn-group {
+        flex-direction: row;
       }
     }
   }
