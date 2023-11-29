@@ -15,10 +15,6 @@ button {
   color: $light;
   cursor: pointer;
 
-  &.gradient {
-    background-color: blue;
-  }
-
   &:hover {
     opacity: .85;
   }

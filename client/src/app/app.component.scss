@@ -4,7 +4,7 @@ main {
   width: 100vw;
   max-width: $app-width;
   min-height: 100vh;
-  background-color: $app-bg;
+  background-color: $light;
 
   header {
     color: $light;
@@ -15,7 +15,7 @@ main {
     font-size: 28px;
     font-style: italic;
     letter-spacing: 2.5px;
-    background-color: $main;
+    background-image: $gradient-main;
   }
 
   div#corner {
@@ -28,7 +28,7 @@ main {
       border-top-left-radius: $header-radius;
       width: $header-radius;
       height: $header-radius;
-      background-color: $app-bg;
+      background-color: $light;
       content: '';
     }
   }

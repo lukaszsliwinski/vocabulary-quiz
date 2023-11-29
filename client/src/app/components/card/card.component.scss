@@ -35,12 +35,12 @@ section {
     background-color: $light;
 
     &.correct {
-      background-color: lightgreen;
+      background-color: $correct;
       transition: background-color .3s ease-in-out;
     }
 
     &.incorrect {
-      background-color: lightcoral;
+      background-color: $incorrect;
       transition: background-color .3s ease-in-out;
     }
 
@@ -129,7 +129,9 @@ section {
         }
 
         &[disabled] {
-          background-color: $mid-main;
+          box-shadow: none;
+          color: $light-grey;
+          background-color: $dark-grey;
         }
       }
     }

@@ -1,17 +1,33 @@
-$light-grey: #e5e7eb;
-$dark-grey: #9ca3af;
-$app-bg: #f9fafb;
-$main: blue;
-$mid-main: #3b82f6;
-$light-main: #dbeafe;
-$light: white;
-$dark: black;
+/* colors */
 
-$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-$shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+$main: #3a2988;
+$mid-main: #4833aa;
+$light-main: #e1e1f2;
+
+$light: #fafafa;
+$dark: #0a0a0a;
+
+$light-grey: #f1f3f9;
+$dark-grey: #bec5e0;
+
+$correct: lightgreen;
+$incorrect: lightcoral;
+
+$gradient-main: linear-gradient(to right, $main, $mid-main);
+$gradient-bg: linear-gradient(to right, $light, $light-grey);
+//$gradient-bg: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+
+
+/* box shadow */
+
+//$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+//$shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 $shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 $shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 $shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+
+/* app dimensions */
 
 $app-radius: 15px;
 $header-radius: 35px;
