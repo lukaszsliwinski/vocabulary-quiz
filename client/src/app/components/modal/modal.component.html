@@ -3,9 +3,19 @@
   [ngClass]="{'open': (isOpen$ | async)}"
 >
   <div class="backdrop">
-    <dialog class="modal-body">
-      <app-result></app-result>
-      <button (click)="close()">ok</button>
+    <dialog [ngClass]="{'lower': getScore() < 7}">
+
+      <div class="grats">
+        <img src="../../../assets/other/cup.png" width="40"/>
+        <div>Congratulations!</div>
+      </div>
+
+      <div class="result">
+        <span>Your result:&nbsp;</span><app-result></app-result>
+      </div>
+
+      <button (click)="close()" autofocus>ok</button>
+
     </dialog>
   </div>
 </div>

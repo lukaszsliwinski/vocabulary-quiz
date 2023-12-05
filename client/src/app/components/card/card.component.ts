@@ -66,10 +66,10 @@ export class CardComponent implements OnInit {
       this.plPhrase = this.phrase.pl;
       this.phrase.en.forEach((engPhrase) => {
         this.translations.push(engPhrase);
-      })
+      });
       this.phrase.categories.forEach((category) => {
         this.categories.push(category);
-      })
+      });
     } else {
       alert('Error, please reload app and try again.');
     }

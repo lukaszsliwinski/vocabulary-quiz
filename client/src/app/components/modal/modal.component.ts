@@ -9,10 +9,13 @@ import { ResultService } from 'src/app/services/result.service';
 export class ModalComponent {
   public isOpen$ = this.resultService.isOpen$;
 
-  constructor(private resultService: ResultService) {
+  constructor(private resultService: ResultService) {}
+
+  close(): void {
+    this.resultService.closeModal();
   }
 
-  close() {
-    this.resultService.closeModal();
+  getScore(): number {
+    return this.resultService.getScore();
   }
 }
