@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { IPhrase } from 'src/app/models/phrase';
 import { PhrasesService } from 'src/app/services/phrases.service';
 import { ResultService } from 'src/app/services/result.service';
@@ -13,8 +12,6 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  private router =  inject(Router);
-
   @ViewChild('answerInputRef') answerInputRef: ElementRef;
   @ViewChild('nextBtnRef') nextBtnRef: ElementRef;
 
@@ -74,8 +71,7 @@ export class CardComponent implements OnInit {
         this.categories.push(category);
       })
     } else if (this.id > this.total) {
-      alert(`Your result: ${this.resultService.getScore()} / ${this.total}`);
-      this.router.navigate(['/']);
+      this.resultService.openModal();
     } else {
       alert('Error, please reload app and try again.');
     }

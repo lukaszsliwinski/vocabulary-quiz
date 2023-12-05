@@ -1,13 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResultService {
+  private router =  inject(Router);
+
   private score = new BehaviorSubject<number>(0);
+  private isOpen = new BehaviorSubject<boolean>(false);
 
   public score$ = this.score.asObservable();
+  public isOpen$ = this.isOpen.asObservable();
 
   constructor() { }
 
@@ -21,5 +26,14 @@ export class ResultService {
 
   getScore(): number {
     return this.score.value;
+  }
+
+  openModal(): void {
+    this.isOpen.next(true);
+  }
+
+  closeModal(): void {
+    this.isOpen.next(false);
+    this.router.navigate(['/']);
   }
 }

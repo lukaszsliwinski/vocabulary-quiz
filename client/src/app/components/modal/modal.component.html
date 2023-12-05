@@ -1,0 +1,11 @@
+<div
+  class="modal"
+  [ngClass]="{'open': (isOpen$ | async)}"
+>
+  <div class="backdrop">
+    <dialog class="modal-body">
+      <app-result></app-result>
+      <button (click)="close()">ok</button>
+    </dialog>
+  </div>
+</div>

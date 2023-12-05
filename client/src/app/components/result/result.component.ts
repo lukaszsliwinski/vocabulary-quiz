@@ -9,7 +9,7 @@ import { ResultService } from 'src/app/services/result.service';
 })
 export class ResultComponent {
   public score$ = this.resultService.score$;
-  public total = this.phrasesService.phrasesAmount$;
+  public total$ = this.phrasesService.phrasesAmount$;
 
   constructor (
     private resultService: ResultService,

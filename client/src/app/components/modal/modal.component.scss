@@ -1,0 +1,25 @@
+@import '../../../assets/styles/variables.scss';
+
+div.modal {
+  display: none;
+
+  &.open {
+    display: block;
+  }
+
+  .backdrop {
+    inset: 0;
+    position: fixed;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .75);
+
+    dialog {
+      width: 220px;
+      height: 160px;
+      background: $light;
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { CardComponent } from './components/card/card.component';
 import { ResultComponent } from './components/result/result.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CategoryComponent } from './components/category/category.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CategoryComponent } from './components/category/category.component';
     HomeComponent,
     CardComponent,
     ResultComponent,
-    CategoryComponent
+    CategoryComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
