@@ -14,12 +14,24 @@ div.modal {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, .4);
 
     dialog {
+      box-shadow: $shadow-xl;
       width: 220px;
       height: 160px;
       background: $light;
+      animation: slide-in 0.7s both;
+
+      @keyframes slide-in {
+        0% {
+          transform: translateY(-1000px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      
+      }
     }
   }
 }

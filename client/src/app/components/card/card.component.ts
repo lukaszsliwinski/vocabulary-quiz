@@ -70,8 +70,6 @@ export class CardComponent implements OnInit {
       this.phrase.categories.forEach((category) => {
         this.categories.push(category);
       })
-    } else if (this.id > this.total) {
-      this.resultService.openModal();
     } else {
       alert('Error, please reload app and try again.');
     }
@@ -81,17 +79,20 @@ export class CardComponent implements OnInit {
     this.correct = this.phrasesService.checkTheCorrectness(this.answerForm.value.answerInput, this.translations);
     this.nextDisabled = false;
     setTimeout(() => this.nextBtnRef.nativeElement.focus());
-    
+
     if (this.correct !== undefined) this.answerForm.disable();
     if (this.correct === true) this.resultService.incrementScore();
   }
 
   next(): void {
-    this.id = this.id + 1;
-    this.clearData();
-    this.getData();
-    this.nextDisabled = true;
-
-    this.answerInputRef.nativeElement.focus();
+    if (this.id < this.total) {
+      this.id = this.id + 1;
+      this.clearData();
+      this.getData();
+      this.nextDisabled = true;
+      this.answerInputRef.nativeElement.focus();
+    } else {
+      this.resultService.openModal();
+    }
   }
 }
