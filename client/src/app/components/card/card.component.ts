@@ -113,6 +113,7 @@ export class CardComponent implements OnInit {
       this.answerInputRef.nativeElement.focus();
     } else {
       // open modal with result when no phrases left
+      this.nextDisabled = true;
       this.resultService.openModal();
     }
   }
