@@ -15,25 +15,24 @@ export class PhrasesService {
   public randomPhrases$ = this.randomPhrases.asObservable();
   public phrasesAmount$ = this.phrasesAmount.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // get phrases from api by category
   getPhrases(category: string): Observable<IPhrasesHttpResponse> {
-    return this.http.post<IPhrasesHttpResponse>('api/get-phrases', { category: category })
-      .pipe(
-        tap((result) => {
-          this.randomPhrases.next(result.phrases);
-          this.phrasesAmount.next(result.phrases.length)
-        }),
-        catchError((error: HttpErrorResponse) => {
-          return throwError(() => error);
-        })
-      );
-  };
+    return this.http.post<IPhrasesHttpResponse>('api/get-phrases', { category: category }).pipe(
+      tap((result) => {
+        this.randomPhrases.next(result.phrases);
+        this.phrasesAmount.next(result.phrases.length);
+      }),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(() => error);
+      })
+    );
+  }
 
   // get phrase by id from local list
   getPhraseById(id: number): IPhrase | undefined {
-    const phrase = this.randomPhrases.value.find(phrase => phrase.id === id);
+    const phrase = this.randomPhrases.value.find((phrase) => phrase.id === id);
     return phrase;
   }
 

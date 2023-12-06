@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ResultService {
-  private router =  inject(Router);
+  private router = inject(Router);
 
   private score = new BehaviorSubject<number>(0);
   private isOpen = new BehaviorSubject<boolean>(false);
@@ -14,11 +14,11 @@ export class ResultService {
   public score$ = this.score.asObservable();
   public isOpen$ = this.isOpen.asObservable();
 
-  constructor() { }
+  constructor() {}
 
   // add point to score
   incrementScore(): void {
-    this.score.next(this.score.value + 1)
+    this.score.next(this.score.value + 1);
   }
 
   // reset score

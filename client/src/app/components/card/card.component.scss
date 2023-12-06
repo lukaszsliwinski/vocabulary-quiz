@@ -36,12 +36,12 @@ section {
 
     &.correct {
       background-color: $correct;
-      transition: background-color .3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
     }
 
     &.incorrect {
       background-color: $incorrect;
-      transition: background-color .3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
     }
 
     div.tags {
@@ -124,5 +124,3 @@ section {
     }
   }
 }
-
-

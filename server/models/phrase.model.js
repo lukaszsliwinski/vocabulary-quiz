@@ -3,23 +3,23 @@ const mongoose = require('mongoose');
 const PhraseSchema = new mongoose.Schema({
   date: {
     type: String,
-    required: true,
+    required: true
   },
 
   pl: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
 
   en: {
     type: Array,
-    required: true,
+    required: true
   },
 
   categories: {
     type: Array,
-    required: true,
+    required: true
   }
 });
 

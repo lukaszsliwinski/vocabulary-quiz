@@ -11,7 +11,7 @@ export class ResultComponent {
   public score$ = this.resultService.score$;
   public total$ = this.phrasesService.phrasesAmount$;
 
-  constructor (
+  constructor(
     private resultService: ResultService,
     private phrasesService: PhrasesService
   ) {}

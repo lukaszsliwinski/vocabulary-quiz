@@ -16,9 +16,7 @@ export class HomeComponent implements OnInit {
   public categories$ = this.categories.asObservable();
   public types = ['verbs', 'phrasal verbs', 'nouns', 'adjectives', 'phrases'];
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   // get categories on app init
   ngOnInit() {
@@ -27,18 +25,17 @@ export class HomeComponent implements OnInit {
 
   // get categories from api
   getCategories(): Observable<ICategoriesHttpResponse> {
-    return this.http.get<ICategoriesHttpResponse>('api/get-categories')
-      .pipe(
-        tap((result) => {
-          let data: ICategory[] = result.categories;
-          const otherCategory = data.find(obj => obj._id === 'other');
+    return this.http.get<ICategoriesHttpResponse>('api/get-categories').pipe(
+      tap((result) => {
+        let data: ICategory[] = result.categories;
+        const otherCategory = data.find((obj) => obj._id === 'other');
 
-          if (otherCategory) data.push(data.splice(data.indexOf(otherCategory), 1)[0]);
-          this.categories.next(data);
-        }),
-        catchError((error: HttpErrorResponse) => {
-          return throwError(() => error);
-        })
-      );
-  };
+        if (otherCategory) data.push(data.splice(data.indexOf(otherCategory), 1)[0]);
+        this.categories.next(data);
+      }),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(() => error);
+      })
+    );
+  }
 }

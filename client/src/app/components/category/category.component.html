@@ -1,6 +1,11 @@
 <button
-  (click)="start(category._id);"
-  [ngStyle]="{'background-image': background === 'image' ? 'url(assets/backgrounds/'+category._id+'.png)' : 'linear-gradient(60deg, #4833aa 30%, #bec5e0 100%)'}"
+  (click)="start(category._id)"
+  [ngStyle]="{
+    'background-image':
+      background === 'image'
+        ? 'url(assets/backgrounds/' + category._id + '.png)'
+        : 'linear-gradient(60deg, #4833aa 30%, #bec5e0 100%)'
+  }"
 >
   <h2>{{ category._id }}</h2>
   <div class="icon-wrapper">

@@ -31,4 +31,4 @@ import { ModalComponent } from './components/modal/modal.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

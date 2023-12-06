@@ -29,30 +29,30 @@ export class CategoryComponent implements OnInit {
 
   // list of categories and font awesome icons
   public icons = [
-    {name: 'medicine', icon: faHeartPulse},
-    {name: 'nature', icon: faMountain},
-    {name: 'business', icon: faBriefcase},
-    {name: 'technical', icon: faGears},
-    {name: 'behaviour', icon: faFaceSmile},
-    {name: 'cooking', icon: faCarrot},
-    {name: 'other', icon: faClipboardQuestion},
-    {name: 'verbs', icon: faCommentDots},
-    {name: 'phrases', icon: faCommentDots},
-    {name: 'nouns', icon: faCommentDots},
-    {name: 'adjectives', icon: faCommentDots},
-    {name: 'phrasal verbs', icon: faCommentDots}
-  ]
+    { name: 'medicine', icon: faHeartPulse },
+    { name: 'nature', icon: faMountain },
+    { name: 'business', icon: faBriefcase },
+    { name: 'technical', icon: faGears },
+    { name: 'behaviour', icon: faFaceSmile },
+    { name: 'cooking', icon: faCarrot },
+    { name: 'other', icon: faClipboardQuestion },
+    { name: 'verbs', icon: faCommentDots },
+    { name: 'phrases', icon: faCommentDots },
+    { name: 'nouns', icon: faCommentDots },
+    { name: 'adjectives', icon: faCommentDots },
+    { name: 'phrasal verbs', icon: faCommentDots }
+  ];
 
   public icon: IconDefinition;
 
   constructor(
     private phrasesService: PhrasesService,
     private resultService: ResultService
-  ) { }
+  ) {}
 
   // assign icon to category
   ngOnInit(): void {
-    const faData = this.icons.find(obj => obj.name === this.category._id);
+    const faData = this.icons.find((obj) => obj.name === this.category._id);
     if (faData) this.icon = faData.icon;
   }
 

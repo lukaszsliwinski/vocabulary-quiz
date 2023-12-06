@@ -67,7 +67,7 @@ export class CardComponent implements OnInit {
     // get total phrases number
     this.phrasesService.phrasesAmount$.subscribe((total) => {
       this.total = total;
-    })
+    });
 
     // assign phrase and answers to local variables
     if (this.phrase) {
@@ -86,7 +86,10 @@ export class CardComponent implements OnInit {
   // check answer function
   check(): void {
     // check if answer is correct
-    this.correct = this.phrasesService.checkTheCorrectness(this.answerForm.value.answerInput, this.translations);
+    this.correct = this.phrasesService.checkTheCorrectness(
+      this.answerForm.value.answerInput,
+      this.translations
+    );
 
     // enable and focus on next button
     this.nextDisabled = false;
