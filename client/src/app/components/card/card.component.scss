@@ -93,7 +93,7 @@ section {
       align-items: center;
       height: 150px;
       overflow-y: hidden;
-      transition: height .3s ease-in-out;
+      transition: height 0.3s ease-in-out;
 
       &.hidden {
         height: 0;

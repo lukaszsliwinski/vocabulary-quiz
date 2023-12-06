@@ -27,10 +27,7 @@
     </div>
 
     <!-- correct answers -->
-    <div
-      class="correct-answers"
-      [ngClass]="{ hidden: correct === undefined }"
-    >
+    <div class="correct-answers" [ngClass]="{ hidden: correct === undefined }">
       <div *ngFor="let engPhrase of translations; index as i">
         <span [ngClass]="{ hidden: translations.length === 1 }">{{ i + 1 }}.&nbsp;</span>
         {{ engPhrase }}
