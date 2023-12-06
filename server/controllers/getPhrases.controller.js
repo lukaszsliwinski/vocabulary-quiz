@@ -1,5 +1,6 @@
 const Phrase = require('../models/phrase.model')
 
+// get phrases from db
 const getPhrases = (request, response) => {
   Phrase
     .aggregate([

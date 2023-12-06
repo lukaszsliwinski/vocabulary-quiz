@@ -1,8 +1,12 @@
 <section>
   <header>
+
+    <!-- back to menu button -->
     <button routerLink="/" class="back">
         <fa-icon [icon]="faXmark"></fa-icon>
     </button>
+
+    <!-- actual result -->
     <app-result></app-result>
   </header>
   <form
@@ -10,10 +14,16 @@
     [ngClass]="{'correct': correct === true, 'incorrect' : correct === false }"
     (ngSubmit)="check()"
   >
+
+    <!-- badges with categories -->
     <div class="tags">
       <small *ngFor="let category of categories">{{ category }}</small>
     </div>
+
+    <!-- pl phrase -->
     <div class="pl-phrase">{{ id }}. {{ plPhrase }}</div>
+
+    <!-- input for answer -->
     <div class="answer-input">
       <input
         #answerInputRef
@@ -22,6 +32,8 @@
         formControlName="answerInput"
       />
     </div>
+
+    <!-- correct answers -->
     <div class="correct-answers">
       <div
         *ngFor="let engPhrase of translations; index as i"
@@ -31,6 +43,8 @@
         {{ engPhrase }}
       </div>
     </div>
+
+    <!-- submit and next buttons -->
     <div class="btn-group">
       <button type="submit" [disabled]="correct !== undefined">Check</button>
       <button #nextBtnRef (click)="next()" [disabled]="nextDisabled">Next</button>

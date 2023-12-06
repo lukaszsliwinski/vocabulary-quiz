@@ -3,13 +3,16 @@
   [ngClass]="{'open': (isOpen$ | async)}"
 >
   <div class="backdrop">
+    <!-- add lower class and hide cup when score is below 7 -->
     <dialog [ngClass]="{'lower': getScore() < 7}">
 
+      <!-- winner cup -->
       <div class="grats">
         <img src="../../../assets/other/cup.png" width="40"/>
         <div>Congratulations!</div>
       </div>
 
+      <!-- final result -->
       <div class="result">
         <span>Your result:&nbsp;</span><app-result></app-result>
       </div>

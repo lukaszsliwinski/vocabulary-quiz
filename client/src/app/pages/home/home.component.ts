@@ -20,10 +20,12 @@ export class HomeComponent implements OnInit {
     private http: HttpClient
   ) { }
 
+  // get categories on app init
   ngOnInit() {
     this.getCategories().subscribe();
   }
 
+  // get categories from api
   getCategories(): Observable<ICategoriesHttpResponse> {
     return this.http.get<ICategoriesHttpResponse>('api/get-categories')
       .pipe(

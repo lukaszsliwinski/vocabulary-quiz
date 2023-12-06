@@ -17,6 +17,7 @@ export class PhrasesService {
 
   constructor(private http: HttpClient) { }
 
+  // get phrases from api by category
   getPhrases(category: string): Observable<IPhrasesHttpResponse> {
     return this.http.post<IPhrasesHttpResponse>('api/get-phrases', { category: category })
       .pipe(
@@ -30,11 +31,13 @@ export class PhrasesService {
       );
   };
 
+  // get phrase by id from local list
   getPhraseById(id: number): IPhrase | undefined {
     const phrase = this.randomPhrases.value.find(phrase => phrase.id === id);
     return phrase;
   }
 
+  // check if answer is in the list of correct answers
   checkTheCorrectness(input: string, translations: string[]): boolean {
     return translations.includes(input);
   }

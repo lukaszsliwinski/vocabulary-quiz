@@ -11,10 +11,12 @@ export class ModalComponent {
 
   constructor(private resultService: ResultService) {}
 
+  // close modal function
   close(): void {
     this.resultService.closeModal();
   }
 
+  // get final score function
   getScore(): number {
     return this.resultService.getScore();
   }

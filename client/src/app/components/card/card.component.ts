@@ -37,14 +37,17 @@ export class CardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // clear previous data and get actual
     this.clearData();
     this.getData();
   }
 
   ngAfterViewInit() {
+    // focus on input after render data
     this.answerInputRef.nativeElement.focus();
   }
 
+  // clear card function
   clearData(): void {
     this.phrase = undefined;
     this.plPhrase = '';
@@ -56,12 +59,17 @@ export class CardComponent implements OnInit {
     this.answerForm.reset();
   }
 
+  // get actual data function
   getData(): void {
+    // get phrase
     this.phrase = this.phrasesService.getPhraseById(this.id);
+
+    // get total phrases number
     this.phrasesService.phrasesAmount$.subscribe((total) => {
       this.total = total;
     })
 
+    // assign phrase and answers to local variables
     if (this.phrase) {
       this.plPhrase = this.phrase.pl;
       this.phrase.en.forEach((engPhrase) => {
@@ -75,23 +83,33 @@ export class CardComponent implements OnInit {
     }
   }
 
+  // check answer function
   check(): void {
+    // check if answer is correct
     this.correct = this.phrasesService.checkTheCorrectness(this.answerForm.value.answerInput, this.translations);
+
+    // enable and focus on next button
     this.nextDisabled = false;
     setTimeout(() => this.nextBtnRef.nativeElement.focus());
 
+    // disable form
     if (this.correct !== undefined) this.answerForm.disable();
+
+    // add point if answer is correct
     if (this.correct === true) this.resultService.incrementScore();
   }
 
+  // next phrase function
   next(): void {
     if (this.id < this.total) {
+      // clear data and prepare new card
       this.id = this.id + 1;
       this.clearData();
       this.getData();
       this.nextDisabled = true;
       this.answerInputRef.nativeElement.focus();
     } else {
+      // open modal with result when no phrases left
       this.resultService.openModal();
     }
   }

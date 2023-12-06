@@ -27,6 +27,7 @@ export class CategoryComponent implements OnInit {
   @Input() public category: ICategory;
   @Input() public background: string;
 
+  // list of categories and font awesome icons
   public icons = [
     {name: 'medicine', icon: faHeartPulse},
     {name: 'nature', icon: faMountain},
@@ -49,18 +50,23 @@ export class CategoryComponent implements OnInit {
     private resultService: ResultService
   ) { }
 
+  // assign icon to category
   ngOnInit(): void {
     const faData = this.icons.find(obj => obj.name === this.category._id);
     if (faData) this.icon = faData.icon;
   }
 
+  // start quiz function
   start(category: string): void {
+    // clear previous score
     this.resultService.clearScore();
+    // get phrases from category and go to card
     this.phrasesService.getPhrases(category).subscribe(() => {
       this.router.navigate(['card'], { skipLocationChange: true });
     });
   }
 
+  // get category backgrounds
   getBgUrl() {
     return `url(./backgrounds/${this.category})`;
   }
