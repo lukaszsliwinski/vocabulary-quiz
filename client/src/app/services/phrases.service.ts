@@ -36,8 +36,10 @@ export class PhrasesService {
     return phrase;
   }
 
-  // check if answer is in the list of correct answers
+  // check if the answer is in the list of correct answers
   checkTheCorrectness(input: string, translations: string[]): boolean {
-    return translations.includes(input);
+    // remove all white spaces and uppercases from input string
+    const formatted = input?.trim().replace(/\s+/g, ' ').toLowerCase();
+    return translations.includes(formatted);
   }
 }
