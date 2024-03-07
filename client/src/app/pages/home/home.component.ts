@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   private categories = new BehaviorSubject<ICategory[]>([]);
 
   public categories$ = this.categories.asObservable();
-  public types = ['verbs', 'phrasal verbs', 'nouns', 'adjectives', 'phrases'];
+  public types = ['verbs', 'phrasal verbs', 'nouns', 'adjectives', 'phrases', 'idioms'];
 
   constructor(private http: HttpClient) {}
 

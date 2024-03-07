@@ -40,7 +40,8 @@ export class CategoryComponent implements OnInit {
     { name: 'phrases', icon: faCommentDots },
     { name: 'nouns', icon: faCommentDots },
     { name: 'adjectives', icon: faCommentDots },
-    { name: 'phrasal verbs', icon: faCommentDots }
+    { name: 'phrasal verbs', icon: faCommentDots },
+    { name: 'idioms', icon: faCommentDots }
   ];
 
   public icon: IconDefinition;
