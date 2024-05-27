@@ -54,7 +54,7 @@ export class CategoryComponent implements OnInit {
   // assign icon to category
   ngOnInit(): void {
     const faData = this.icons.find((obj) => obj.name === this.category._id);
-    if (faData) this.icon = faData.icon;
+    this.icon = faData!.icon;
   }
 
   // start quiz function

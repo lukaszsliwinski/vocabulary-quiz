@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
         let data: ICategory[] = result.categories;
         const otherCategory = data.find((obj) => obj._id === 'other');
 
-        if (otherCategory) data.push(data.splice(data.indexOf(otherCategory), 1)[0]);
+        data.push(data.splice(data.indexOf(otherCategory!), 1)[0]);
         this.categories.next(data);
       }),
       catchError((error: HttpErrorResponse) => {
