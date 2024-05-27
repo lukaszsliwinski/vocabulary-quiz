@@ -1,11 +1,8 @@
-const Phrase = require('../models/phrase.model');
+const { aggregateCategories } = require('../services/getCategories.controller');
 
 // get categories from db
 const getCategories = (request, response) => {
-  Phrase.aggregate([
-    { $unwind: '$categories' },
-    { $group: { _id: '$categories', count: { $sum: 1 } } }
-  ])
+  aggregateCategories()
     .then((result) => {
       response.status(200).json({
         status: 200,

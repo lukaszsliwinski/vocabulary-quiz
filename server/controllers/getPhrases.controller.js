@@ -1,8 +1,8 @@
-const Phrase = require('../models/phrase.model');
+const { getPhrasesByCategory, formatResult } = require('../services/getPhrases.controller');
 
-// get phrases from db
+// get phrases
 const getPhrases = (request, response) => {
-  Phrase.aggregate([{ $match: { categories: request.body.category } }, { $sample: { size: 10 } }])
+  getPhrasesByCategory(request.body.category)
     .then((result) => {
       let data = [];
 
