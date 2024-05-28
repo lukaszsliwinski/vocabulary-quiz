@@ -15,9 +15,6 @@ Features:
 - for each word, the user provides a translation and checks its correctness
 - after the last answer, the result is given
 
-## TODO's
-- implement service worker
-
 ## Used technologies
 
 frontend: Typescript / Angular / Scss<br>
