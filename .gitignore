@@ -13,4 +13,4 @@
 .env
 
 # convert data script
-/convert_data
+/data
