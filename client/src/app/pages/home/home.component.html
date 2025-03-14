@@ -1,7 +1,11 @@
-<section *ngIf="categories$ | async as categories">
+<ng-template #loading>
+  <div class="loader"></div>
+</ng-template>
+
+<section *ngIf="categories$ | async as categories; else loading">
   <!-- render list of categories -->
-  <h2>categories</h2>
-  <menu>
+  <h2>Categories</h2>
+  <menu *ngIf="categories.length > 0; else loading">
     <div *ngFor="let category of categories">
       <app-category
         *ngIf="!types.includes(category._id)"
@@ -12,8 +16,8 @@
   </menu>
 
   <!-- render list of word types -->
-  <h2>types</h2>
-  <menu>
+  <h2>Types</h2>
+  <menu *ngIf="categories.length > 0; else loading">
     <div *ngFor="let category of categories">
       <app-category
         *ngIf="types.includes(category._id)"
