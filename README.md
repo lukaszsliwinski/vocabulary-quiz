@@ -4,6 +4,8 @@
 
 **[www.vocabularyquiz.lukaszsliwinski.pl](http://www.vocabularyquiz.lukaszsliwinski.pl)**
 
+![Website Preview](./preview.gif)
+
 ## About project
 
 This is my side-project that I made to improve web programming using Angular framework. The application helps me learn english vocabulary after lessons.
