@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/variables';
 
 button {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ button {
   padding: 0 16px;
   background-size: cover;
   font-weight: bold;
-  color: $light;
+  color: variables.$light;
   cursor: pointer;
 
   &:hover {
@@ -21,6 +21,6 @@ button {
 
   div.icon-wrapper {
     font-size: 28px;
-    color: $light;
+    color: variables.$light;
   }
 }

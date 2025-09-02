@@ -1,9 +1,10 @@
 /*** GLOBAL STYLES ***/
 
+/* imoprt variables */
+@use './assets/styles/variables';
+
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
-
-@import './assets/styles/variables.scss';
 
 * {
   box-sizing: border-box;
@@ -13,8 +14,7 @@ body {
   margin: 0;
   font-family: 'Roboto Flex', sans-serif;
   letter-spacing: 1px;
-  // background-color: $light-grey;
-  background-image: $gradient-bg;
+  background-image: variables.$gradient-bg;
 }
 
 a,
@@ -31,24 +31,24 @@ input {
 button {
   display: inline-block;
   margin: 2px;
-  box-shadow: $shadow-xl;
+  box-shadow: variables.$shadow-xl;
   border-radius: 16px;
   width: 120px;
   height: 40px;
-  background-color: $main;
-  color: $light;
+  background-color: variables.$main;
+  color: variables.$light;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
 
   &:not([disabled]):hover {
-    box-shadow: $shadow-md;
+    box-shadow: variables.$shadow-md;
   }
 
   &[disabled] {
     box-shadow: none;
-    color: $light-grey;
-    background-color: $dark-grey;
+    color: variables.$light-grey;
+    background-color: variables.$dark-grey;
   }
 }

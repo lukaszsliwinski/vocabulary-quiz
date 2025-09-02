@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/variables';
 
 section {
   padding-bottom: 20px;
@@ -14,33 +14,33 @@ section {
 
   button.back {
     display: inline-block;
-    box-shadow: $shadow-lg;
+    box-shadow: variables.$shadow-lg;
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    background-color: $light;
-    color: $dark;
+    background-color: variables.$light;
+    color: variables.$dark;
     text-align: center;
     cursor: pointer;
 
     &:hover {
-      box-shadow: $shadow-md;
+      box-shadow: variables.$shadow-md;
     }
   }
 
   form {
     margin: 0 20px;
-    box-shadow: $shadow-xl;
+    box-shadow: variables.$shadow-xl;
     border-radius: 20px;
-    background-color: $light;
+    background-color: variables.$light;
 
     &.correct {
-      background-color: $correct;
+      background-color: variables.$correct;
       transition: background-color 0.3s ease-in-out;
     }
 
     &.incorrect {
-      background-color: $incorrect;
+      background-color: variables.$incorrect;
       transition: background-color 0.3s ease-in-out;
     }
 
@@ -53,10 +53,10 @@ section {
         display: block;
         margin: 0 2px;
         border-radius: 4px;
-        border: 1.5px solid $mid-main;
+        border: 1.5px solid variables.$mid-main;
         padding: 3px 6px;
-        background-color: $light-main;
-        color: $main;
+        background-color: variables.$light-main;
+        color: variables.$main;
         font-size: 12px;
         font-weight: 500;
       }
@@ -77,7 +77,7 @@ section {
 
       input#answerInput {
         margin: 10px 0;
-        border-bottom: 2px solid $dark;
+        border-bottom: 2px solid variables.$dark;
         width: 200px;
         padding: 0 8px 4px;
         text-align: center;

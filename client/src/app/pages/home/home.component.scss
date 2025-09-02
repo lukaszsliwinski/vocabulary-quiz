@@ -1,11 +1,11 @@
-@import '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/variables';
 
 div.loader {
   margin: 10px auto;
   width: 35px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 6px solid $mid-main;
+  border: 6px solid variables.$mid-main;
   animation:
     l20-1 0.8s infinite linear alternate,
     l20-2 1.6s infinite linear;
@@ -56,7 +56,7 @@ section {
   padding: 0 10px;
   overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-color: $dark-grey transparent;
+  scrollbar-color: variables.$dark-grey transparent;
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -64,20 +64,20 @@ section {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $dark-grey;
+    background: variables.$dark-grey;
     border-radius: 4px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: $dark-grey;
+    background: variables.$dark-grey;
   }
 
   &::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  @media only screen and (min-width: $app-width) {
-    max-height: calc($app-height - 170px);
+  @media only screen and (min-width: variables.$app-width) {
+    max-height: calc(variables.$app-height - 170px);
   }
 
   h2 {

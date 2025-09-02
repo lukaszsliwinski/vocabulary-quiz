@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/variables';
 
 div.modal {
   display: none;
@@ -25,7 +25,7 @@ div.modal {
       width: 90%;
       max-width: 280px;
       height: 220px;
-      background: $light;
+      background: variables.$light;
       animation: slide-in 0.7s both;
 
       @keyframes slide-in {

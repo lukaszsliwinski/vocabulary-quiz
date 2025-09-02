@@ -1,46 +1,46 @@
-@import '../assets/styles/variables.scss';
+@use '../assets/styles/variables';
 
 main {
   width: 100vw;
-  max-width: $app-width;
+  max-width: variables.$app-width;
   min-height: calc(var(--vh, 1vh) * 100);
-  background-color: $light;
+  background-color: variables.$light;
 
   header {
-    color: $light;
-    border-bottom-right-radius: $header-radius;
+    color: variables.$light;
+    border-bottom-right-radius: variables.$header-radius;
     width: 100%;
     height: 90px;
     padding: 25px 20px;
     font-size: 28px;
     font-style: italic;
     letter-spacing: 2.5px;
-    background-image: $gradient-main;
+    background-image: variables.$gradient-main;
   }
 
   div#corner {
-    width: $header-radius;
-    height: $header-radius;
-    background-color: $main;
+    width: variables.$header-radius;
+    height: variables.$header-radius;
+    background-color: variables.$main;
 
     &::after {
       display: block;
-      border-top-left-radius: $header-radius;
-      width: $header-radius;
-      height: $header-radius;
-      background-color: $light;
+      border-top-left-radius: variables.$header-radius;
+      width: variables.$header-radius;
+      height: variables.$header-radius;
+      background-color: variables.$light;
       content: '';
     }
   }
 
-  @media only screen and (min-width: $app-width) {
-    min-height: $app-height;
-    margin: calc((100vh - $app-height) / 2) auto;
-    box-shadow: $shadow-xl;
-    border-radius: $app-radius;
+  @media only screen and (min-width: variables.$app-width) {
+    min-height: variables.$app-height;
+    margin: calc((100vh - variables.$app-height) / 2) auto;
+    box-shadow: variables.$shadow-xl;
+    border-radius: variables.$app-radius;
 
     header {
-      border-radius: $app-radius $app-radius $header-radius 0;
+      border-radius: variables.$app-radius variables.$app-radius variables.$header-radius 0;
     }
   }
 }
