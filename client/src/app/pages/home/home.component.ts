@@ -6,9 +6,10 @@ import { ICategory } from 'src/app/models/category';
 import { ICategoriesHttpResponse } from 'src/app/models/http-responses';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   private categories = new BehaviorSubject<ICategory[]>([]);

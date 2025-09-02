@@ -3,9 +3,10 @@ import { PhrasesService } from 'src/app/services/phrases.service';
 import { ResultService } from 'src/app/services/result.service';
 
 @Component({
-  selector: 'app-result',
-  templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+    selector: 'app-result',
+    templateUrl: './result.component.html',
+    styleUrls: ['./result.component.scss'],
+    standalone: false
 })
 export class ResultComponent {
   public score$ = this.resultService.score$;
