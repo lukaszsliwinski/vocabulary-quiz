@@ -1,4 +1,4 @@
-const { aggregateCategories } = require('../services/getCategories.controller');
+const { aggregateCategories } = require('../services/getCategories.service');
 
 // get categories from db
 const getCategories = (request, response) => {

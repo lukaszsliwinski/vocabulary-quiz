@@ -1,4 +1,4 @@
-const { getPhrasesByCategory, formatResult } = require('../services/getPhrases.controller');
+const { getPhrasesByCategory, formatResult } = require('../services/getPhrases.service');
 
 // get phrases
 const getPhrases = (request, response) => {
