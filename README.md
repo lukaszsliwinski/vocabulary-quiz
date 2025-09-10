@@ -30,3 +30,4 @@ This is my side-project that I made to improve web programming using Angular fra
 - Node.js
 - Express.js
 - MongoDB
+- Jest
