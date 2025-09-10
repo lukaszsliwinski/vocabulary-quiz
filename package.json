@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
-    "test": "cross-env NODE_ENV=test jest server --runInBand --detectOpenHandles"
+    "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles"
   },
   "author": "Łukasz Śliwiński",
   "license": "ISC",
