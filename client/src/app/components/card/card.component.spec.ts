@@ -5,11 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './card.component';
 import { PhrasesService } from 'src/app/services/phrases.service';
 import { ResultService } from 'src/app/services/result.service';
-import { IPhrase } from 'src/app/models/phrase';
 import { ElementRef } from '@angular/core';
 import { of } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { mockPhrases } from 'src/tests/__mocks__/mockPhrases';
 
 describe('CardComponent', () => {
   let component: CardComponent;
@@ -17,18 +17,11 @@ describe('CardComponent', () => {
   let phrasesSpy: jasmine.SpyObj<PhrasesService>;
   let resultSpy: jasmine.SpyObj<ResultService>;
 
-  const mockPhrase: IPhrase = {
-    id: 6,
-    pl: 'miedź',
-    en: [ 'copper' ],
-    categories: [ 'nouns', 'technical' ]
-  };
-
   beforeEach(async () => {
     phrasesSpy = jasmine.createSpyObj('PhrasesService', ['getPhraseById', 'checkTheCorrectness'], {
       phrasesAmount$: of(1)
     });
-    phrasesSpy.getPhraseById.and.returnValue(mockPhrase);
+    phrasesSpy.getPhraseById.and.returnValue(mockPhrases[5]);
     resultSpy = jasmine.createSpyObj('ResultService', ['incrementScore', 'openModal']);
 
     await TestBed.configureTestingModule({
