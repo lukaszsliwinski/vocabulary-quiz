@@ -36,6 +36,7 @@ describe('HomeComponent (integration)', () => {
     expect(request.request.method).toBe('GET');
     request.flush({ categories: mockCategories });
 
+    fixture.detectChanges();
 
     // check if <app-category> elements are rendered
     const categories = fixture.debugElement.queryAll(By.css('app-category'));
