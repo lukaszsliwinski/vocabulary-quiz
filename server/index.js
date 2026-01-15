@@ -25,7 +25,7 @@ const NODE_ENV = process.env.NODE_ENV;
 // middleware
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
-app.use(express.static(path.resolve(__dirname, '../client/dist/client')));
+app.use(express.static(path.resolve(__dirname, '../client/dist/client/browser')));
 app.use((request, response, next) => {
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.setHeader(
@@ -38,7 +38,7 @@ app.use((request, response, next) => {
 
 // render client app
 app.get(['/'], (request, response) => {
-  response.sendFile(path.resolve(__dirname, '../client/dist/client', 'index.html'));
+  response.sendFile(path.resolve(__dirname, '../client/dist/client/browser', 'index.html'));
 });
 
 // endpoints
